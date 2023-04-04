@@ -30,6 +30,6 @@ public class SumColumnInArray {
                 }
             }
         }
-        System.out.println(sum);
+        System.out.println("Tổng của các phần tử ở cột " + col + " là: " + sum);
     }
 }
