@@ -1,41 +1,8 @@
-package ss4_class_and_OOP.bai_tap;
+package ss4_class_and_oop.bai_tap.quadratic_equation;
 
 import java.util.Scanner;
 
-public class QuadraticEquation {
-    double a;
-    double b;
-    double c;
-
-    private QuadraticEquation(double a, double b, double c) {
-        this.a = a;
-        this.b = b;
-        this.c = c;
-    }
-
-    private double getA() {
-        return this.a;
-    }
-
-    private double getB() {
-        return this.b;
-    }
-
-    private double getC() {
-        return this.c;
-    }
-
-    private double getDiscriminant() {
-        return Math.pow(getB(), 2) - 4 * getA() * getC();
-    }
-
-    private double getRoot1() {
-        return (-getB() + Math.sqrt(Math.pow(getB(), 2) - 4 * getA() * getC())) / 2 * getA();
-    }
-    private double getRoot2() {
-        return (-getB() - Math.sqrt(Math.pow(getB(), 2) - 4 * getA() * getC())) / 2 * getA();
-    }
-
+public class QuadraticEquationMain {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter a: ");
@@ -51,7 +18,7 @@ public class QuadraticEquation {
             System.out.println("x2 = " + quadraticEquation.getRoot2());
         } else if(quadraticEquation.getDiscriminant() < 0) {
             double x = 0;
-            System.out.println("The equation has roots is x: " + x);
+            System.out.println("The equation has root is x: " + x);
         } else {
             System.out.println("The equation has nos roots!");
         }
