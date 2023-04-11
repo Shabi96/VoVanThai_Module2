@@ -1,12 +1,10 @@
-package ss6_inheritance.thuc_hanh;
+package ss7_abstract_and_interface.bai_tap.interface_colorable;
 
 public class Rectangle extends Shape {
-    private double width;
-    public double length;
+    private double width = 1;
+    public double length = 1;
 
     public Rectangle() {
-        width = 1.0;
-        length = 1.0;
     }
 
     public Rectangle(double width, double length) {
@@ -46,9 +44,7 @@ public class Rectangle extends Shape {
 
     @Override
     public String toString() {
-        return super.toString() + "Rectangle{" +
-                "width=" + width +
-                ", length=" + length +
+        return "Rectangle{ area=" + getArea() +
                 '}';
     }
 }

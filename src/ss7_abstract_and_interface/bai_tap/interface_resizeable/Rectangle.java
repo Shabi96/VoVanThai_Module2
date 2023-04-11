@@ -1,12 +1,11 @@
-package ss6_inheritance.thuc_hanh;
+package ss7_abstract_and_interface.bai_tap.interface_resizeable;
 
-public class Rectangle extends Shape {
-    private double width;
-    public double length;
 
-    public Rectangle() {
-        width = 1.0;
-        length = 1.0;
+public class Rectangle extends Shape implements IResizeable {
+    private double width = 1;
+    public double length = 1;
+
+    public Rectangle(){
     }
 
     public Rectangle(double width, double length) {
@@ -46,9 +45,13 @@ public class Rectangle extends Shape {
 
     @Override
     public String toString() {
-        return super.toString() + "Rectangle{" +
-                "width=" + width +
-                ", length=" + length +
+        return "Rectangle{ area=" + getArea() +
                 '}';
+    }
+
+    @Override
+    public void resize(double percent) {
+        setWidth(getWidth() + (getWidth() * percent / 100));
+        setLength(getLength() + (getLength() * percent / 100));
     }
 }

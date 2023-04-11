@@ -1,4 +1,4 @@
-package ss6_inheritance.thuc_hanh;
+package ss7_abstract_and_interface.bai_tap.interface_colorable;
 
 public class Circle extends Shape {
     private double radius = 1.0;
@@ -33,8 +33,8 @@ public class Circle extends Shape {
 
     @Override
     public String toString() {
-        return super.toString() + "Circle{" +
-                "radius=" + radius +
+        return "Circle{ area=" + getArea() +
                 '}';
     }
+
 }

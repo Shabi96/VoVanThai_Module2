@@ -1,6 +1,6 @@
-package ss6_inheritance.thuc_hanh;
+package ss7_abstract_and_interface.bai_tap.interface_resizeable;
 
-public class Circle extends Shape {
+public class Circle extends Shape implements IResizeable {
     private double radius = 1.0;
 
     public Circle() {
@@ -33,8 +33,12 @@ public class Circle extends Shape {
 
     @Override
     public String toString() {
-        return super.toString() + "Circle{" +
-                "radius=" + radius +
-                '}';
+        return "Circle{ area=" + getArea() +
+                '}' ;
+    }
+
+    @Override
+    public void resize(double percent) {
+        setRadius(getRadius() + (getRadius() * percent / 100));
     }
 }
