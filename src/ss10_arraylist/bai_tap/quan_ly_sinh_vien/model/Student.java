@@ -1,7 +1,5 @@
 package ss10_arraylist.bai_tap.quan_ly_sinh_vien.model;
 
-import ss10_arraylist.bai_tap.quan_ly_sinh_vien.CodeGym;
-
 public class Student extends CodeGym {
     private String classes;
     private int point;
@@ -31,5 +29,16 @@ public class Student extends CodeGym {
 
     public void setPoint(int point) {
         this.point = point;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" + "id=" + getId() +
+                ", name='" + getName() + '\'' +
+                ", date=" + getDate() +
+                ", gender='" + getGender() + '\'' +
+                ", classes='" + classes + '\'' +
+                ", point=" + point +
+                '}';
     }
 }

@@ -1,6 +1,5 @@
-package ss10_arraylist.bai_tap.quan_ly_sinh_vien;
+package ss10_arraylist.bai_tap.quan_ly_sinh_vien.model;
 
-import java.util.Date;
 
 public abstract class CodeGym {
     private int id;

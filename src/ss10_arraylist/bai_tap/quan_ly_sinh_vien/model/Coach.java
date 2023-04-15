@@ -1,7 +1,5 @@
 package ss10_arraylist.bai_tap.quan_ly_sinh_vien.model;
 
-import ss10_arraylist.bai_tap.quan_ly_sinh_vien.CodeGym;
-
 public class Coach extends CodeGym {
     private String specialize;
 
@@ -23,5 +21,15 @@ public class Coach extends CodeGym {
 
     public void setSpecialize(String specialize) {
         this.specialize = specialize;
+    }
+
+    @Override
+    public String toString() {
+        return "Coach{" + "id=" + getId() +
+                ", name='" + getName() + '\'' +
+                ", date=" + getDate() +
+                ", gender='" + getGender() + '\'' +
+                ", specialize='" + specialize + '\'' +
+                '}';
     }
 }
