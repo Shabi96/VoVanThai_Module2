@@ -5,7 +5,7 @@ import ss12_java_collection_framework.bai_tap.quan_ly_san_pham.service.CarServic
 import java.util.Scanner;
 
 public class CarController {
-    CarService carService = new CarService();
+    private CarService carService = new CarService();
     Scanner sc = new Scanner(System.in);
 
     public void showMenu() {

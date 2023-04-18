@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class CarService implements ICarService {
-    CarRepository carRepository = new CarRepository();
+    private CarRepository carRepository = new CarRepository();
     Scanner scanner = new Scanner(System.in);
 
     @Override
