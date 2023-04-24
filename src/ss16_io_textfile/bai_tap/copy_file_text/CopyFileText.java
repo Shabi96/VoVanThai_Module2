@@ -5,8 +5,8 @@ import java.util.ArrayList;
 
 public class CopyFileText {
     public static void main(String[] args) {
-        String PATH = "src/ss16_io_textfile/bai_tap/copy_file_text/source_file";
-        File file = new File(PATH);
+        String PATH_SOURCE_FILE = "src/ss16_io_textfile/bai_tap/copy_file_text/source_file";
+        File file = new File(PATH_SOURCE_FILE);
         FileWriter fileWriter = null;
         BufferedWriter bufferedWriter = null;
         try {
@@ -40,8 +40,8 @@ public class CopyFileText {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        String PATH1 = "src/ss16_io_textfile/bai_tap/copy_file_text/target_file";
-        File file1 = new File(PATH1);
+        String PATH_TARGET_FILE = "src/ss16_io_textfile/bai_tap/copy_file_text/target_file";
+        File file1 = new File(PATH_TARGET_FILE);
         FileWriter fileWriter1 = null;
         BufferedWriter bufferedWriter1;
         int count = 0;

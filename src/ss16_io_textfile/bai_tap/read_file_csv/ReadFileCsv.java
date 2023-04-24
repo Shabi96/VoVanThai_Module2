@@ -24,8 +24,8 @@ public class ReadFileCsv {
     }
 
     public static void main(String[] args) {
-        String PATH = "src/ss16_io_textfile/bai_tap/read_file_csv/file.csv";
-        File file = new File(PATH);
+        String PATH_FILE_CSV = "src/ss16_io_textfile/bai_tap/read_file_csv/file.csv";
+        File file = new File(PATH_FILE_CSV);
         FileReader fileReader = null;
         BufferedReader bufferedReader;
         try {
