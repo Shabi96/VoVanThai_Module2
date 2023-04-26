@@ -1,4 +1,4 @@
-package case_study.model;
+package case_study.model.facility;
 
 public class House extends Facility {
     private String roomStandard;
@@ -12,8 +12,8 @@ public class House extends Facility {
         this.floors = floors;
     }
 
-    public House(int id, String name, double area, double price, int amount, String roomStandard, int floors) {
-        super(id, name, area, price, amount);
+    public House(int id, String name, double area, double price, int amount, String time, String roomStandard, int floors) {
+        super(id, name, area, price, amount, time);
         this.roomStandard = roomStandard;
         this.floors = floors;
     }

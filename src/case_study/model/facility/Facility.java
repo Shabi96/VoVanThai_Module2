@@ -1,4 +1,4 @@
-package case_study.model;
+package case_study.model.facility;
 
 public abstract class Facility {
     private int id;
@@ -6,24 +6,18 @@ public abstract class Facility {
     private double area;
     private double price;
     private int amount;
-    private static String time;
-    static {
-        String[] arr = new String[4];
-        arr[0] = "YEAR";
-        arr[1] = "MONTH";
-        arr[2] = "DAY";
-        arr[3] = "HOUR";
-    }
+    private  String time;
 
     public Facility() {
     }
 
-    public Facility(int id, String name, double area, double price, int amount) {
+    public Facility(int id, String name, double area, double price, int amount, String time) {
         this.id = id;
         this.name = name;
         this.area = area;
         this.price = price;
         this.amount = amount;
+        this.time = time;
     }
 
     public int getId() {
@@ -66,12 +60,12 @@ public abstract class Facility {
         this.amount = amount;
     }
 
-    public static String getTime() {
+    public String getTime() {
         return time;
     }
 
-    public static void setTime(String time) {
-        Facility.time = time;
+    public void setTime(String time) {
+        this.time = time;
     }
 
     @Override
