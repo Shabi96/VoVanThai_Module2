@@ -1,33 +1,33 @@
 package case_study.model.employee;
 
 public abstract class Person {
-    private int id;
+    private String code;
     private String name;
     private String dayOfBirth;
     private String gender;
-    private int cmnd;
-    private int phone;
+    private String id   ;
+    private String phone;
     private String email;
 
     public Person() {
     }
 
-    public Person(int id, String name, String dayOfBirth, String gender, int cmnd, int phone, String email) {
-        this.id = id;
+    public Person(String code, String name, String dayOfBirth, String gender, String id, String phone, String email) {
+        this.code = code;
         this.name = name;
         this.dayOfBirth = dayOfBirth;
         this.gender = gender;
-        this.cmnd = cmnd;
+        this.id = id;
         this.phone = phone;
         this.email = email;
     }
 
-    public int getId() {
-        return id;
+    public String getCode() {
+        return code;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public String getName() {
@@ -54,19 +54,19 @@ public abstract class Person {
         this.gender = gender;
     }
 
-    public int getCmnd() {
-        return cmnd;
+    public String getId() {
+        return id;
     }
 
-    public void setCmnd(int cmnd) {
-        this.cmnd = cmnd;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
@@ -81,11 +81,11 @@ public abstract class Person {
     @Override
     public String toString() {
         return "Person{" +
-                "id=" + id +
+                "code=" + code +
                 ", name='" + name + '\'' +
                 ", dayOfBirth='" + dayOfBirth + '\'' +
                 ", gender='" + gender + '\'' +
-                ", cmnd=" + cmnd +
+                ", id=" + id +
                 ", phone=" + phone +
                 ", email='" + email + '\'' +
                 '}';

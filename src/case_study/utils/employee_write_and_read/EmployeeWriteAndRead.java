@@ -1,4 +1,4 @@
-package case_study.comon.employee_write_and_read;
+package case_study.utils.employee_write_and_read;
 
 import case_study.model.employee.Employee;
 
@@ -33,8 +33,8 @@ public class EmployeeWriteAndRead {
             String temp;
             while ((temp = bufferedReader.readLine()) != null && !temp.equals("")) {
                 String[] arr = temp.split(",");
-                employeeArrayList.add(new Employee(Integer.parseInt(arr[0]), arr[1], arr[2], arr[3], Integer.parseInt(arr[4]),
-                        Integer.parseInt(arr[5]), arr[6], arr[7], arr[8], Double.parseDouble(arr[9])));
+                employeeArrayList.add(new Employee((arr[0]), arr[1], arr[2], arr[3], (arr[4]),
+                        arr[5], arr[6], arr[7], arr[8], Double.parseDouble(arr[9])));
             }
             bufferedReader.close();
             fileReader.close();

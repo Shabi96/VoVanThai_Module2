@@ -7,6 +7,6 @@ import java.util.List;
 public interface ICustomerRepository {
     List<Customer> getCustomerList();
     void addNewCustomer(Customer customer);
-    void editCustomer(int id, Customer customer);
-    int checkById(int id);
+    void editCustomer();
+    int checkById(String id);
 }

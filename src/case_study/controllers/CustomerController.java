@@ -1,8 +1,11 @@
 package case_study.controllers;
 
+import case_study.service.customer_service.CustomerService;
+
 import java.util.Scanner;
 
 public class CustomerController {
+    private CustomerService customerService = new CustomerService();
     public void customerMenu() {
         Scanner sccaner = new Scanner(System.in);
         boolean flag = true;
@@ -26,10 +29,13 @@ public class CustomerController {
             }
             switch (choice) {
                 case 1:
+                    customerService.displayCustomerList();
                     break;
                 case 2:
+                    customerService.addNewCustomer();
                     break;
                 case 3:
+                    customerService.editCustomer();
                     break;
                 case 4:
                     flag = false;

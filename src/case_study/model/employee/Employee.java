@@ -14,8 +14,8 @@ public class Employee extends Person {
         this.wage = wage;
     }
 
-    public Employee(int id, String name, String dayOfBirth, String gender, int cmnd, int phone, String email, String level, String position, double wage) {
-        super(id, name, dayOfBirth, gender, cmnd, phone, email);
+    public Employee(String code, String name, String dayOfBirth, String gender, String id , String phone, String email, String level, String position, double wage) {
+        super(code , name, dayOfBirth, gender, id, phone, email);
         this.level = level;
         this.position = position;
         this.wage = wage;
@@ -48,11 +48,11 @@ public class Employee extends Person {
     @Override
     public String toString() {
         return "Employee{" +
-                "id=" + getId() +
+                "code=" + getCode() +
                 ", name='" + getName() + '\'' +
                 ", dayOfBirth='" + getDayOfBirth() + '\'' +
                 ", gender='" + getGender() + '\'' +
-                ", cmnd=" + getCmnd() +
+                ", id=" + getId() +
                 ", phone=" + getPhone() +
                 ", email='" + getEmail() + '\'' +
                 ", level='" + level + '\'' +
@@ -62,8 +62,8 @@ public class Employee extends Person {
     }
 
     public String writeToFile() {
-        return super.getId() + "," + super.getName() + "," + super.getDayOfBirth() + "," +
-                super.getGender() + "," + super.getCmnd() + "," + super.getPhone() + "," + super.getEmail()
+        return super.getCode() + "," + super.getName() + "," + super.getDayOfBirth() + "," +
+                super.getGender() + "," + super.getId() + "," + super.getPhone() + "," + super.getEmail()
                 + "," + level + "," + position + "," + wage;
     }
 }

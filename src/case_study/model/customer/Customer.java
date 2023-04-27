@@ -14,8 +14,8 @@ public class Customer extends Person {
         this.address = address;
     }
 
-    public Customer(int id, String name, String dayOfBirth, String gender, int cmnd, int phone, String email, String typeOfGuest, String address) {
-        super(id, name, dayOfBirth, gender, cmnd, phone, email);
+    public Customer(String code, String name, String dayOfBirth, String gender, String id, String phone, String email, String typeOfGuest, String address) {
+        super(code, name, dayOfBirth, gender, id, phone, email);
         this.typeOfGuest = typeOfGuest;
         this.address = address;
     }
@@ -38,14 +38,20 @@ public class Customer extends Person {
 
     @Override
     public String toString() {
-        return "Customer{" +
-                "typeOfGuest='" + typeOfGuest + '\'' +
+        return "Customer{" + "code=" + getCode() +
+                ", name='" + getName() + '\'' +
+                ", dayOfBirth='" + getDayOfBirth() + '\'' +
+                ", gender='" + getGender() + '\'' +
+                ", id=" + getId() +
+                ", phone=" + getPhone() +
+                ", email='" + getEmail() + '\'' +
+                ", typeOfGuest='" + typeOfGuest + '\'' +
                 ", address='" + address + '\'' +
                 '}';
     }
     public String WriteToFile() {
-        return super.getId() + "," + super.getName() + "," + super.getDayOfBirth() + ","
-                + super.getGender() + "," + super.getCmnd() + "," + super.getPhone()
+        return super.getCode() + "," + super.getName() + "," + super.getDayOfBirth() + ","
+                + super.getGender() + "," + super.getId() + "," + super.getPhone()
                 + "," + super.getEmail() + "," + typeOfGuest + "," + address;
     }
 }
