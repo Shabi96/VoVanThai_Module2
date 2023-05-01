@@ -1,6 +1,6 @@
 package case_study.model.facility;
 
-public class House extends Facility {
+public class Villa extends Facility {
     private String roomStandard;
     private int floors;
 
@@ -12,7 +12,7 @@ public class House extends Facility {
         this.floors = floors;
     }
 
-    public House(int id, String name, double area, double price, int amount, String time, String roomStandard, int floors) {
+    public House(String id, String name, double area, double price, int amount, String time, String roomStandard, int floors) {
         super(id, name, area, price, amount, time);
         this.roomStandard = roomStandard;
         this.floors = floors;
@@ -36,9 +36,25 @@ public class House extends Facility {
 
     @Override
     public String toString() {
-        return "House{" +
+        return "House{" + "id=" + getId() +
+                ", name='" + getName() + '\'' +
+                ", area=" + getArea() +
+                ", price=" + getPrice() +
+                ", amount=" + getAmount() +
+                ", time='" + getTime() + '\'' +
                 "roomStandard='" + roomStandard + '\'' +
                 ", floors=" + floors +
                 '}';
+    }
+
+    public String writeToFile() {
+        return getId() +
+                "," + getName() +
+                "," + getArea() +
+                "," + getPrice() +
+                "," + getAmount() + 
+                "," +getTime() + 
+                "," + roomStandard +
+                "," + floors;
     }
 }
