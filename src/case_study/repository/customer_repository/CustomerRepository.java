@@ -3,7 +3,6 @@ package case_study.repository.customer_repository;
 import case_study.utils.customer_write_and_read.CustomerWriteAndRead;
 import case_study.model.customer.Customer;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class CustomerRepository implements ICustomerRepository {

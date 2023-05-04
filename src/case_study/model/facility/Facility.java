@@ -1,7 +1,7 @@
 package case_study.model.facility;
 
 public abstract class Facility {
-    private int id;
+    private String id;
     private String name;
     private double area;
     private double price;
@@ -11,7 +11,7 @@ public abstract class Facility {
     public Facility() {
     }
 
-    public Facility(int id, String name, double area, double price, int amount, String time) {
+    public Facility(String id, String name, double area, double price, int amount, String time) {
         this.id = id;
         this.name = name;
         this.area = area;
@@ -20,11 +20,11 @@ public abstract class Facility {
         this.time = time;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -76,6 +76,8 @@ public abstract class Facility {
                 ", area=" + area +
                 ", price=" + price +
                 ", amount=" + amount +
+                ", time='" + time + '\'' +
                 '}';
     }
+
 }

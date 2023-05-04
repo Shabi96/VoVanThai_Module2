@@ -2,7 +2,7 @@ package case_study.service.employee_service;
 
 import case_study.model.employee.Employee;
 import case_study.repository.employee_repository.EmployeeRepository;
-import case_study.utils.employee_write_and_read.Validate;
+import case_study.utils.validate.Validate;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -23,15 +23,23 @@ public class EmployeeService implements IEmployeeService {
     @Override
     public void addNewEmployee() {
         String code;
+        boolean checkCode = true;
         do {
             System.out.println("Nhập mã nhân viên: ");
             code = sc.nextLine();
+            int indexCheck = employeeRepository.checkById(code);
             if (Validate.validateEmployeeCode(code)) {
-                System.out.println("Thêm thành công!!!");
+                if (indexCheck < 0) {
+                    System.out.println("Thêm thành công!!!");
+                    checkCode = false;
+                } else {
+                    System.err.println("Mã đã tồn tại!!\n" +
+                            "Vui lòng nhập lại!!!");
+                }
             } else {
-                System.out.println("Nhập chưa đúng định dạng!");
+                System.out.println("Nhập chưa đúng định dạng (NV-XXXX)!");
             }
-        } while (!Validate.validateEmployeeCode(code));
+        } while (checkCode);
 
         String name;
         do {

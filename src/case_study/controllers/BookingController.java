@@ -1,8 +1,11 @@
 package case_study.controllers;
 
+import case_study.service.booking_service.BookingService;
+
 import java.util.Scanner;
 
 public class BookingController {
+    private BookingService bookingService = new BookingService();
     public void bookingMenu() {
         Scanner sccaner = new Scanner(System.in);
         boolean flag = true;
@@ -28,8 +31,10 @@ public class BookingController {
             }
             switch (choice) {
                 case 1:
+                    bookingService.addNewBooking();
                     break;
                 case 2:
+                    bookingService.displayBookingList();
                     break;
                 case 3:
                     break;

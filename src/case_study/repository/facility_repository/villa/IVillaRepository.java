@@ -1,10 +1,9 @@
 package case_study.repository.facility_repository.villa;
 
 import case_study.model.facility.Villa;
-
-import java.util.List;
+import java.util.LinkedHashMap;
 
 public interface IVillaRepository {
-    List<Villa> getVillaList();
+    LinkedHashMap<Villa, Integer> getVillaList();
     void addNewVilla(Villa villa);
 }

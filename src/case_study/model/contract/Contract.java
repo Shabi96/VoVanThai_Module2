@@ -49,8 +49,7 @@ public class Contract {
     }
 
     @Override
-    public String
-    toString() {
+    public String toString() {
         return "Contract{" +
                 "idContract=" + idContract +
                 ", idBooking=" + idBooking +

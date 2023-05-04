@@ -1,17 +1,17 @@
 package case_study.model.booking;
 
 public class Booking {
-    private int idBooking;
+    private String idBooking;
     private String dayBooking;
     private String dayStart;
     private String dayEnd;
-    private int idCustomer;
-    private int idService;
+    private String idCustomer;
+    private String idService;
 
     public Booking() {
     }
 
-    public Booking(int idBooking, String dayBooking, String dayStart, String dayEnd, int idCustomer, int idService) {
+    public Booking(String idBooking, String dayBooking, String dayStart, String dayEnd, String idCustomer, String idService) {
         this.idBooking = idBooking;
         this.dayBooking = dayBooking;
         this.dayStart = dayStart;
@@ -20,11 +20,11 @@ public class Booking {
         this.idService = idService;
     }
 
-    public int getIdBooking() {
+    public String getIdBooking() {
         return idBooking;
     }
 
-    public void setIdBooking(int idBooking) {
+    public void setIdBooking(String idBooking) {
         this.idBooking = idBooking;
     }
 
@@ -52,19 +52,19 @@ public class Booking {
         this.dayEnd = dayEnd;
     }
 
-    public int getIdCustomer() {
+    public String getIdCustomer() {
         return idCustomer;
     }
 
-    public void setIdCustomer(int idCustomer) {
+    public void setIdCustomer(String idCustomer) {
         this.idCustomer = idCustomer;
     }
 
-    public int getIdService() {
+    public String getIdService() {
         return idService;
     }
 
-    public void setIdService(int idService) {
+    public void setIdService(String idService) {
         this.idService = idService;
     }
 
@@ -78,5 +78,14 @@ public class Booking {
                 ", idCustomer=" + idCustomer +
                 ", idService=" + idService +
                 '}';
+    }
+
+    public String writeToFile() {
+        return idBooking + "," +
+                dayBooking + "," +
+                dayStart + "," +
+                dayEnd + "," +
+                idCustomer + "," +
+                idService;
     }
 }

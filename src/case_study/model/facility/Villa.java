@@ -14,7 +14,7 @@ public class Villa extends Facility {
         this.floors = floors;
     }
 
-    public Villa(int id, String name, double area, double price, int amount, String time, String roomStandard, double poolArea, int floors) {
+    public Villa(String id, String name, double area, double price, int amount, String time, String roomStandard, double poolArea, int floors) {
         super(id, name, area, price, amount, time);
         this.roomStandard = roomStandard;
         this.poolArea = poolArea;
@@ -47,10 +47,26 @@ public class Villa extends Facility {
 
     @Override
     public String toString() {
-        return "Villa{" +
+        return "Villa{" + "id=" + getId() +
+                ", name='" + getName() + '\'' +
+                ", area=" + getArea() +
+                ", price=" + getPrice() +
+                ", amount=" + getAmount() +
+                ", time='" + getTime() + '\'' +
                 "roomStandard='" + roomStandard + '\'' +
                 ", poolArea=" + poolArea +
                 ", floors=" + floors +
                 '}';
+    }
+    public String writeToFile() {
+        return getId() +
+                "," + getName() +
+                "," + getArea() +
+                "," + getPrice() +
+                "," + getAmount() +
+                "," +getTime() +
+                "," + roomStandard +
+                "," + poolArea +
+                "," + floors;
     }
 }

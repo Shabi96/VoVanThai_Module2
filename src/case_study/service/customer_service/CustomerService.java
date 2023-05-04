@@ -2,9 +2,10 @@ package case_study.service.customer_service;
 
 import case_study.model.customer.Customer;
 import case_study.repository.customer_repository.CustomerRepository;
-import case_study.utils.employee_write_and_read.Validate;
+import case_study.utils.validate.Validate;
 
 import java.time.LocalDate;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -23,15 +24,23 @@ public class CustomerService implements ICustomerService {
     @Override
     public void addNewCustomer() {
         String code;
+        boolean checkCode = true;
         do {
-            System.out.println("Nhập mã khác hàng: ");
+            System.out.println("Nhập mã khách hàng: ");
             code = sc.nextLine();
+            int indexCheck = customerRepository.checkById(code);
             if (Validate.validateCustomerCode(code)) {
-                System.out.println("Thêm thành công!!!");
+                if (indexCheck < 0) {
+                    System.out.println("Thêm thành công!!!");
+                    checkCode = false;
+                } else {
+                    System.err.println("Mã đã tồn tại!!!\n" +
+                            "Vui lòng nhập lại!!");
+                }
             } else {
                 System.err.println("Nhập chưa đúng định dạng!");
             }
-        } while (!Validate.validateCustomerCode(code));
+        } while (checkCode);
 
         String name;
         do {
@@ -82,7 +91,7 @@ public class CustomerService implements ICustomerService {
             if (Validate.validateId(id)) {
                 System.out.println("Thêm thành công!!!");
             } else {
-                System.err.println("Nhập chưa đúng định dạng!");
+                System.err.println("Nhập chưa đúng định dạng! ( 9 hoặc 12 số )");
             }
         } while (!Validate.validateId(id));
         String phone;
