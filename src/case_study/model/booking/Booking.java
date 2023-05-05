@@ -1,6 +1,6 @@
 package case_study.model.booking;
 
-public class Booking {
+public class Booking implements Comparable<Booking>{
     private String idBooking;
     private String dayBooking;
     private String dayStart;
@@ -87,5 +87,10 @@ public class Booking {
                 dayEnd + "," +
                 idCustomer + "," +
                 idService;
+    }
+
+    @Override
+    public int compareTo(Booking o) {
+        return 1;
     }
 }

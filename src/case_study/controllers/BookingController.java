@@ -1,11 +1,13 @@
 package case_study.controllers;
 
 import case_study.service.booking_service.BookingService;
+import case_study.service.contract_service.ContractService;
 
 import java.util.Scanner;
 
 public class BookingController {
     private BookingService bookingService = new BookingService();
+    private ContractService contractService = new ContractService();
     public void bookingMenu() {
         Scanner sccaner = new Scanner(System.in);
         boolean flag = true;
@@ -37,10 +39,13 @@ public class BookingController {
                     bookingService.displayBookingList();
                     break;
                 case 3:
+                    contractService.addNewContract();
                     break;
                 case 4:
+                    contractService.displayContractList();
                     break;
                 case 5:
+                    contractService.editContract();
                     break;
                 case 6:
                     flag = false;

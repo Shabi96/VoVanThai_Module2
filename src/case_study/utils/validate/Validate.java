@@ -10,13 +10,14 @@ public class Validate {
     private static final String REGEX_NAME = "^([\\p{Lu}][\\p{Ll}]{1,8})(\\s([\\p{Lu}]|[\\p{Lu}][\\p{Ll}]{1,10})){0,5}$";
     private static final String REGEX_ID = "^(\\d{9}|\\d{12})$";
     private static final String REGEX_PHONE = "^0\\d{9}$";
-    private static final String REGEX_DAY_OF_BIRTH = "^(\\d{4}-(01|0[3-9]{1}|10|11|12)-(1\\d{1}|2\\d{1}|30|31)|(\\d{4}-(02)-1\\d{1}|2\\d{1}))$";
+    private static final String REGEX_DAY_OF_BIRTH = "^(\\d{4}-(01|0[3-9]|10|11|12)-(0[1-9]|1\\d|2\\d|30|31)|(\\d{4}-(02)-1\\d|2\\d))$";
     private static final String REGEX_CUSTOMER_CODE = "^(KH-)\\d{4}$";
     private static final String REGEX_HOUSE_ID = "^(SVHO-)\\d{4}$";
     private static final String REGEX_VILLA_ID = "^(SVVL-)\\d{4}$";
     private static final String REGEX_ROOM_ID = "^(SVRO-)\\d{4}$";
     private static final String REGEX_SERVICE_NAME = "^[A-Z]{1,}[a-z]{0,}$";
-//    private static final String REGEX_BOOKING_DAY = "^((2023)-(0[5-9]{1}|10|11|12)-(1\\d{1}|2\\d{1}|30|31)|((202)[]-(02)-1\\d{1}|2\\d{1}))$";
+    private static final String REGEX_BOOKING_ID = "^(BK-)\\d{4}$";
+    private static final String REGEX_CONTRACT_ID = "^(CT-)\\d{4}$";
 
     public static boolean validateName(String name) {
         return Pattern.matches(REGEX_NAME, name);
@@ -64,5 +65,13 @@ public class Validate {
 
     public static boolean validateServiceName(String serviceName) {
         return Pattern.matches(REGEX_SERVICE_NAME, serviceName);
+    }
+
+    public static boolean validateBookingId(String bookingId) {
+        return Pattern.matches(REGEX_BOOKING_ID, bookingId);
+    }
+
+    public static boolean validateContractId(String contractId) {
+        return Pattern.matches(REGEX_CONTRACT_ID, contractId);
     }
 }

@@ -6,6 +6,7 @@ import case_study.model.facility.Facility;
 import case_study.repository.booking_repository.BookingRepository;
 import case_study.repository.customer_repository.CustomerRepository;
 import case_study.repository.facility_repository.FacilityRepository;
+import case_study.utils.validate.Validate;
 
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -28,14 +29,53 @@ public class BookingService implements IBookingService {
 
     @Override
     public void addNewBooking() {
-        System.out.println("Nhập mã booking: ");
-        String idBooking = sc.nextLine();
-        System.out.println("Nhập ngày booking: ");
-        String dayBooking = sc.nextLine();
-        System.out.println("Nhập ngày bắt đầu: ");
-        String dayStart = sc.nextLine();
-        System.out.println("Nhập ngày kết thúc: ");
-        String dayEnd = sc.nextLine();
+        String idBooking;
+        do {
+            System.out.println("Nhập mã booking: ");
+            idBooking = sc.nextLine();
+            if (Validate.validateBookingId(idBooking)) {
+                System.out.println("Thêm thành công");
+            } else {
+                System.out.println("Nhập sai định dạng BK-YYYY");
+            }
+        } while (!Validate.validateBookingId(idBooking));
+
+        String dayBooking;
+        do {
+            System.out.println("Nhập ngày booking: ");
+            dayBooking = sc.nextLine();
+            if (Validate.validateDayOfBirth(dayBooking)) {
+                System.out.println("Thêm thành công");
+            } else {
+                System.err.println("Nhập sai định dạng YYYY-MM-DD\n" +
+                        "Vui lòng nhập lại!!!");
+            }
+        } while (!Validate.validateDayOfBirth(dayBooking));
+
+        String dayStart;
+        do {
+            System.out.println("Nhập ngày bắt đầu: ");
+            dayStart = sc.nextLine();
+            if (Validate.validateDayOfBirth(dayStart)) {
+                System.out.println("Thêm thành công");
+            } else {
+                System.err.println("Nhập sai định dạng YYYY-MM-DD\n" +
+                        "Vui lòng nhập lại!!!");
+            }
+        } while (!Validate.validateDayOfBirth(dayStart));
+
+        String dayEnd;
+        do {
+            System.out.println("Nhập ngày kết thúc: ");
+            dayEnd = sc.nextLine();
+            if (Validate.validateDayOfBirth(dayEnd)) {
+                System.out.println("Thêm thành công");
+            } else {
+                System.err.println("Nhập sai định dạng YYYY-MM-DD\n" +
+                        "Vui lòng nhập lại!!!");
+            }
+        } while (!Validate.validateDayOfBirth(dayEnd));
+
         boolean check = true;
         String idCustomer;
         do {
@@ -73,6 +113,7 @@ public class BookingService implements IBookingService {
                         "Vui lòng nhập lại!!!");
             }
         } while (checkIdService);
+
         Booking booking = new Booking(idBooking, dayBooking, dayStart, dayEnd, idCustomer, idService);
         bookingRepository.addNewBooking(booking);
         facilityRepository.updateBooking(idService);

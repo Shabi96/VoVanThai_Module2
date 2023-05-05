@@ -2,11 +2,10 @@ package case_study.utils.booking_write_and_read;
 
 import case_study.model.booking.Booking;
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.TreeSet;
 
 public class BookingWriteAndRead {
-    public static void writeToFile(List<Booking> bookings, String path) {
+    public static void writeToFile(TreeSet<Booking> bookings, String path) {
         File file = new File(path);
         FileWriter fileWriter;
         BufferedWriter bufferedWriter;
@@ -24,8 +23,8 @@ public class BookingWriteAndRead {
             e.printStackTrace();
         }
     }
-    public static List<Booking> readToFile(String path) {
-        List<Booking> bookingList = new ArrayList<>();
+    public static TreeSet<Booking> readToFile(String path) {
+        TreeSet<Booking> bookingList = new TreeSet<>();
         File file = new File(path);
         FileReader fileReader;
         BufferedReader bufferedReader;

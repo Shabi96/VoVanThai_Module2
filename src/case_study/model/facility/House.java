@@ -1,5 +1,7 @@
 package case_study.model.facility;
 
+import java.util.Objects;
+
 public class House extends Facility {
     private String roomStandard;
     private int floors;
@@ -57,4 +59,5 @@ public class House extends Facility {
                 "," + roomStandard +
                 "," + floors;
     }
+
 }

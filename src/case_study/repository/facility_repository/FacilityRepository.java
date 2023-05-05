@@ -71,6 +71,7 @@ public class FacilityRepository implements IFacilityRepository {
         for (Facility f : linkedHashMap.keySet()) {
             if (f.getId().equals(idService)) {
                 linkedHashMap.put(f, linkedHashMap.get(f) + 1);
+                System.out.println(f + " đã sử dụng " + linkedHashMap.get(f) + " lần ");
                 break;
             }
         }

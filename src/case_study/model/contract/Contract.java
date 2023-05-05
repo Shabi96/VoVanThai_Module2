@@ -1,34 +1,34 @@
 package case_study.model.contract;
 
 public class Contract {
-    private int idContract;
-    private int idBooking;
+    private String idContract;
+    private String idBooking;
     private double deposit;
     private double sumMoney;
 
     public Contract() {
     }
 
-    public Contract(int idContract, int idBooking, double deposit, double sumMoney) {
+    public Contract(String idContract, String idBooking, double deposit, double sumMoney) {
         this.idContract = idContract;
         this.idBooking = idBooking;
         this.deposit = deposit;
         this.sumMoney = sumMoney;
     }
 
-    public int getIdContract() {
+    public String getIdContract() {
         return idContract;
     }
 
-    public void setIdContract(int idContract) {
+    public void setIdContract(String idContract) {
         this.idContract = idContract;
     }
 
-    public int getIdBooking() {
+    public String getIdBooking() {
         return idBooking;
     }
 
-    public void setIdBooking(int idBooking) {
+    public void setIdBooking(String idBooking) {
         this.idBooking = idBooking;
     }
 
@@ -56,5 +56,8 @@ public class Contract {
                 ", deposit=" + deposit +
                 ", sumMoney=" + sumMoney +
                 '}';
+    }
+    public String writeToFile() {
+        return idContract + "," + idBooking + "," + deposit + "," + sumMoney;
     }
 }
